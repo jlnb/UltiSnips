@@ -21,3 +21,27 @@ endsnippet
 snippet _sup "symbol with sub- and superscript"
 ${1:x}_{$2}^{$3}$0
 endsnippet
+
+snippet glsa "make new gls abbreviation entry" b
+\newglossaryentry{$1}
+{
+	parent=abbr,
+	type=symbols,
+	name={$2},
+	description={$3},
+	first={\glsentrydesc{$1} (\glsentrytext{$1})},
+	firstplural={${4:\glsentrydesc{$1}s} (${5:\glsentrytext{$1}s})}
+}$0
+endsnippet
+
+snippet glss "make new gls symbol entry" b
+\newglossaryentry{$1}
+{
+	parent=${2:latin},
+	type=symbols,
+	name={\ensuremath{\protect $3}},
+	sort=$4,
+	unit={$5},
+	description={$6}
+}$0
+endsnippet

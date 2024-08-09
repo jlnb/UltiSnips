@@ -1,0 +1,12 @@
+snippet ipv "initialize persistent variable"
+if isempty($1)
+    $1 = ${2:0};
+end$0
+endsnippet
+
+snippet ipv2 "initialize persistent variable"
+persistent $1;
+if isempty($1)
+    $1 = ${2:0};
+end$0
+endsnippet
